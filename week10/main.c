@@ -1,10 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int knapsackValue(const int weights[], const int values[], int const capacity, const int items) {
 
-	int table[items + 1][capacity + 1];
+	int **table = malloc(sizeof(int *) * (items + 1));
 
 	for (int i = 0; i <= items; i++) {
+		table[i] = malloc(sizeof(int) * (capacity + 1));
+
 		for (int j = 0; j <= capacity; j++) {
 
 			if (i == 0 || j == 0) {
@@ -22,7 +25,15 @@ int knapsackValue(const int weights[], const int values[], int const capacity, c
 		}
 	}
 
-	return table[items][capacity];
+	int result = table[items][capacity];
+
+	for (int i = 0; i < items; i++) {
+		free(table[i]);
+	}
+
+	free(table);
+
+	return result;
 }
 
 int main() {
