@@ -17,7 +17,6 @@ int main() {
 	}
 
 
-
 	int find_data[] = {7, 10, STOP};
 
 	for (int i = 0; find_data[i] != STOP; i++) {
@@ -30,6 +29,7 @@ int main() {
 		}
 	}
 
+
 	int delete_data[] = {3, 7, 9, STOP};
 
 	for (int i = 0; delete_data[i] != STOP; i++) {
@@ -38,5 +38,6 @@ int main() {
 		print_skiplist_levels(&list);
 	}
 
+	destroy_skiplist(&list);
 	return 0;
 }
