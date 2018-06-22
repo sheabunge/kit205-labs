@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-//typedef char *String;
-
 void insertion_sort(char **a, int first, int last) {
 	int i, j;
 	char *temp;
