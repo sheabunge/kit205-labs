@@ -136,7 +136,7 @@ int in_degree(Graph *self, int v) {
  */
 int out_degree(Graph *self, int v) {
 	int count = 0;
-	EdgeNodePtr current = G.edges[v].head;
+	EdgeNodePtr current = self->edges[v].head;
 
 	// loop through all edges leading out from the needle vertex
 	while (current != NULL) {

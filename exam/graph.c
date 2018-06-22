@@ -2,15 +2,13 @@
 #include <string.h>
 #include <stdlib.h>
 
-const char *LABELS = "abcdefghijklmnopqrstuvwxyz";
-
 /**
  * Retrieve the index number for a given vertex label
  * @param vertex
  * @return
  */
 int get_vertex_index(char vertex) {
-	return (int) (strchr(LABELS, vertex) - LABELS);
+	return (int) vertex - 97;
 }
 
 /**
@@ -19,7 +17,7 @@ int get_vertex_index(char vertex) {
  * @return
  */
 char get_vertex_label(int vertex) {
-	return LABELS[vertex];
+	return (char) (vertex + 97);
 }
 
 /**
